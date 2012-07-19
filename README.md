@@ -53,7 +53,7 @@ mv -v *changes deb-src/
 mv -v *tar.bz2 deb-src/
 ``` 
 
-13. Continue building the next packages ...
+ 13. Continue building the next packages ...
 
 What Happens if A package fails to build?
 ----------------------------------------
@@ -71,7 +71,7 @@ Rebuild the package with repeating steps 9 and 10 from above.
 
 Order in which to build Mate
 ----------------------------
-
+```
 mate-common
 mate-doc-utils
 mate-corba
@@ -101,4 +101,4 @@ mate-settings-daemon (had to use mate-doc-prepare --force --copy; autoreconf -i 
 mate-control-center (needs mate-window-manager installed, else complains about libmarco)
 mate-panel (needs gobject-introspection removed on the host, or --disable-introspection in DEB_CONFIGURE_EXTRA_FLAGS in debian/rules)
 mate-session-manager
-
+```
