@@ -62,8 +62,10 @@ the same source tree. To clean the source tree first move the debian directory
 one level up:
 	mv -v debian ..
 Then, clean everything in the tree with:
-	git reset --hard
-	git clean -f -x -d # CAUTION: This removes everything untracked. If you created new files, make sure you commit them before !!!
+```
+git reset --hard
+git clean -f -x -d # CAUTION: This removes everything untracked. If you created new files, make sure you commit them before !!!
+```
 remove the `debian` directory back to where it is expected: `mv ../debian .`
 Rebuild the package with repeating steps 9 and 10 from above. 
       
