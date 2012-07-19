@@ -10,8 +10,8 @@ Prepering for the build
     `gpg --gen-key`
     All the defaults are good enough!
  3. Set the environment variables for debuild:
-    `export DEBMAIL="yourmail@example.com"`
-    `export DEBFULL="Jon Smith"`
+	export DEBMAIL="yourmail@example.com"
+	export DEBFULLNAME="Jon Smith"
     These have to match what you entered when you created your gpg key !
 
 
@@ -38,13 +38,13 @@ for each repository:
  10. Build the package with: `debuild`
  11. Install the packages built with: `sudo dpkg -i ../*deb`
  12. Clean everthing above the directory with running the following commands:
-     mkdir -v {deb,deb-src}
-     mv -v *deb deb/
-     mv -v *tar.gz deb-src/
-     mv -v *dsc deb-src/
-     mv -v *build deb-src/
-     mv -v *changes deb-src/
-     mv -v *tar.bz2 deb-src/
+	mkdir -v {deb,deb-src}
+	mv -v *deb deb/
+	mv -v *tar.gz deb-src/
+	mv -v *dsc deb-src/
+	mv -v *build deb-src/
+	mv -v *changes deb-src/
+	mv -v *tar.bz2 deb-src/
  13. Continue building the next packages ...
 
 What Happens if A package fails to build?
@@ -52,10 +52,10 @@ What Happens if A package fails to build?
 If a packages fails to build you will not be able to build it again in 
 the same source tree. To clean the source tree first move the debian directory
 one level up:
-    mv -v debian ..
+	mv -v debian ..
 Then, clean everything in the tree with:
-    git reset --hard
-    git clean -f -x -d # CAUTION: This removes everything untracked. If you created new files, make sure you commit them before !!!
+	git reset --hard
+	git clean -f -x -d # CAUTION: This removes everything untracked. If you created new files, make sure you commit them before !!!
 remove the `debian` directory back to where it is expected: `mv ../debian .`
 Rebuild the package with repeating steps 9 and 10 from above. 
       
